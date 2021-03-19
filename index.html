@@ -24,6 +24,51 @@
          font-family: cursive;
      }
     </style>
+    <script>
+     function OrderClick(){
+         document.getElementById("summary").style.display="block";
+         document.getElementById("register").style.opacity="0.3";
+        var mealName="";
+        var adonName="";
+        var mealCost=0;
+        var adonCost=0;
+        var total=0;
+        //Radios
+        var optBurger = document.getElementById("optBurger");
+        var optRoller = document.getElementById("optRoller");
+        //CheckBox
+        var optWings = document.getElementById("optWings");
+        var optKrusher = document.getElementById("optKrusher");
+        if(optBurger.checked) {
+            mealCost=140;
+            mealName=optBurger.value;
+        }
+        if(optRoller.checked) {
+            mealCost=100;
+            mealName=optRoller.value;
+        }
+        if(optWings.checked) {
+            adonCost=90;
+            adonName+=optWings.value + "<br>";
+            mealCost = mealCost + adonCost;
+        }
+        if(optKrusher.checked) {
+            adonCost=50;
+            adonName+=optKrusher.value + "<br>";
+            mealCost = mealCost + adonCost;
+        }
+        total=mealCost;
+        document.getElementById("lblName").innerHTML= document.getElementById("txtName").value;
+        document.getElementById("lblMobile").innerHTML= document.getElementById("txtMobile").value;
+        document.getElementById("lblDate").innerHTML= document.getElementById("txtDate").value;
+        document.getElementById("lblMeal").innerHTML= mealName;
+        document.getElementById("lblAdon").innerHTML= adonName;
+        document.getElementById("lblTotal").innerHTML= "&#8377;" + total;
+        
+        
+        
+     }
+    </script>
   
  </head>
 <body>
